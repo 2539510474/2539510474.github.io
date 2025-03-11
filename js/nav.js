@@ -1,7 +1,8 @@
 document.addEventListener('pjax:complete', tonav);
 document.addEventListener('DOMContentLoaded', tonav);
+
 //响应pjax
-function tonav(){
+function tonav() {
     document.getElementById("name-container").setAttribute("style", "display:none");
 
     var position = $(window).scrollTop();
@@ -11,26 +12,25 @@ function tonav(){
         var scroll = $(window).scrollTop();
 
         if (scroll > position) {
-
-
-            document.getElementById("name-container").setAttribute("style", "");
-            document.getElementsByClassName("menus_items")[1].setAttribute("style", "display:none!important");
+            document.getElementById("mask-name-container").setAttribute("style", "");
+            document.getElementById("name-container").setAttribute("style", "top: 10px !important;");
+            document.getElementsByClassName("menus_items")[1].setAttribute("style", "top: -60px !important;");
 
         } else {
-
-
+            document.getElementById("mask-name-container").setAttribute("style", "z-index: -1 !important");
+            document.getElementById("name-container").setAttribute("style", "top: 70px !important;");
             document.getElementsByClassName("menus_items")[1].setAttribute("style", "");
-            document.getElementById("name-container").setAttribute("style", "display:none");
-
         }
 
         position = scroll;
-
     });
-    function scrollToTop(){
-        document.getElementsByClassName("menus_items")[1].setAttribute("style","");
-        document.getElementById("name-container").setAttribute("style","display:none");
+
+    function scrollToTop() {
+        document.getElementsByClassName("menus_items")[1].setAttribute("style", "");
+        document.getElementById("name-container").setAttribute("style", "display:none");
         btf.scrollToDest(0, 500);
     }
+
 //修复没有弄右键菜单的童鞋无法回顶部的问题
-    document.getElementById("page-name").innerText = document.title.split(" | Link's Blog")[0];}
+    document.getElementById("page-name").innerText = document.title.split(" | Link's Blog")[0];
+}
