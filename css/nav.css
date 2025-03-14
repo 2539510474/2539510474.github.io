@@ -164,3 +164,7 @@
     padding: 5px 10px;
     white-space: nowrap;
 }
+
+#site-name::before {
+    z-index: 1 !important;
+}
