@@ -87,6 +87,8 @@
     --anzhiyu-card-border: #42444a;
   }
   
+
+
 #nav a:hover {
     background: var(--anzhiyu-main);
     transition: 0.3s;
