@@ -552,3 +552,63 @@
   #search-button a.site-page.social-icon.search span {
     display: none;
   }
+
+/* 当导航栏在页面顶部时，背景透明 */
+#page-header:not(.is-top-bar) #nav {
+  background-color: transparent !important;
+  backdrop-filter: none !important;  /* 移除毛玻璃效果 */
+  box-shadow: none !important;
+}
+
+/* 滚动后导航栏的背景样式 */
+/* #page-header.is-top-bar #nav {
+  background-color: var(--anzhiyu-card-bg); 
+  backdrop-filter: saturate(180%) blur(20px); 
+  box-shadow: var(--anzhiyu-shadow-border); 
+  transition: background-color 0.3s, backdrop-filter 0.3s; 
+} */
+
+/* 导航栏通用过渡效果 */
+#nav {
+  transition: background-color 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+}
+
+/* 当导航栏在顶部时，按钮文字为白色 */
+#page-header:not(.is-top-bar) #nav a {
+  color: var(--anzhiyu-white) !important;
+}
+
+/* 当导航栏在顶部时，搜索按钮的图标为白色 */
+#page-header:not(.is-top-bar) #nav #search-button i {
+  color: var(--anzhiyu-white) !important;
+}
+
+/* 当导航栏在顶部时，返回顶部按钮的文字为白色 */
+#page-header:not(.is-top-bar) #nav #nav-totop a {
+  color: var(--anzhiyu-white) !important;
+}
+
+/* 当导航栏在顶部时，下拉菜单的文字为白色 */
+#page-header:not(.is-top-bar) #nav .back-home-button .back-menu-item-text {
+  color: var(--anzhiyu-white) !important;
+}
+
+/* 当导航栏在顶部时，网站标题为白色 */
+#page-header:not(.is-top-bar) #nav #site-name .title {
+  color: var(--anzhiyu-white) !important;
+}
+
+/* 当导航栏在顶部时，页面名称为白色 */
+#page-header:not(.is-top-bar) #nav #page-name {
+  color: var(--anzhiyu-white) !important;
+}
+/* md加粗转换 */
+/* 自定义加粗样式 */
+strong {
+  background: var(--anzhiyu-blue-main);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: white !important;
+  font-weight: 400; /* 移除默认加粗 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

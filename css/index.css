@@ -1550,7 +1550,7 @@ blockquote > :last-child {
 }
 #article-container pre,
 #article-container code {
-  font-size: 18px;
+  font-size: var(--global-font-size);
   font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
 }
 #article-container code {
@@ -1578,7 +1578,7 @@ blockquote > :last-child {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 6px 0 2px 14px;
-  font-size: 18px;
+  font-size: var(--global-font-size);
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1610,7 +1610,7 @@ blockquote > :last-child {
   height: 2.15em;
   background: var(--hltools-bg);
   color: var(--hltools-color);
-  font-size: 18px;
+  font-size: var(--global-font-size);
 }
 #article-container .highlight-tools.closed ~ * {
   display: none;
@@ -4594,13 +4594,36 @@ span.mathjax-overflow {
   overflow: auto;
   padding: 0 0 16px;
 }
-#article-container .fj-gallery {
+.fj-gallery {
+  position: relative;
   margin: 0 0 16px;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
+  padding: 10px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  overflow: visible;
 }
-#article-container .fj-gallery .img-alt {
+.fj-gallery img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  clip-path: inset(0 round 8px);
+  -webkit-transition: box-shadow 0.3s ease;
+  -moz-transition: box-shadow 0.3s ease;
+  -o-transition: box-shadow 0.3s ease;
+  -ms-transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.fj-gallery img:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.fj-gallery .img-alt {
   display: none;
 }
 blockquote.pullquote {
